@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Expense Tracker</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string-array name="Income_Category">
+        <item>Salary</item>
+        <item>Bonus</item>
+        <item>Refunds</item>
+        <item>Investment</item>
+        <item>Sale</item>
+
+
+    </string-array>
+
+    <string-array name="Expense_Category">
+        <item>Food</item>
+        <item>Bills</item>
+        <item>Shopping</item>
+        <item>Travel</item>
+        <item>Health</item>
+
+
+    </string-array>
+</resources>

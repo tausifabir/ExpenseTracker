@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".HomeActivity">
+
+
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Income"
+                android:textAllCaps="false"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/total_incomeTV"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="0Tk"
+                android:textAllCaps="false"
+                android:textSize="20sp" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Expense"
+                android:textAllCaps="false"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/total_expenseTV"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="0Tk"
+                android:textAllCaps="false"
+                android:textSize="20sp" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Balance"
+                android:textAllCaps="false"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/total_balanceTV"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="0Tk"
+                android:textAllCaps="false"
+                android:textSize="20sp" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/today_DateTV"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:padding="20dp"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:text="Today"
+                />
+
+            <TextView
+                android:id="@+id/currentDatePicker_home"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:padding="20dp"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                tools:text="10.3.2019" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/RowAmount"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:text="Amount"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/RowDate"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Date"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textSize="20sp" />
+        </TableRow>
+
+    </TableLayout>
+
+
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="ExtraText">
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/exlistView" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/addbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="9dp"
+            android:layout_marginBottom="15dp"
+            android:src="@drawable/ic_add_black_24dp"
+            app:fabSize="normal" />
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+</LinearLayout>

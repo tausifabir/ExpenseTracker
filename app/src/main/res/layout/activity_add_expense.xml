@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AddExpense">
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/selectRadiogroud"
+        >
+
+        <RadioButton
+            android:id="@+id/incomrbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Income"
+            android:textSize="20sp"
+            android:textAllCaps="false"
+            android:checked="true"
+            />
+
+        <RadioButton
+            android:id="@+id/expenrbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Expense"
+            android:textSize="20sp"
+            android:textAllCaps="false"
+            />
+
+
+    </RadioGroup>
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Income_Spinner"
+        >
+
+    </Spinner>
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Expense_Spinner"
+        android:visibility="gone"
+        >
+
+    </Spinner>
+
+    <EditText
+        android:textAlignment="center"
+        android:id="@+id/amoutnET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="amount"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        android:inputType="number"
+        />
+
+    <Button
+        android:id="@+id/datePicker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="select date"
+        android:onClick="selectdate"
+        android:textSize="20sp"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/addsavebtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:textSize="20sp"
+        android:textAllCaps="false"/>
+
+</LinearLayout>

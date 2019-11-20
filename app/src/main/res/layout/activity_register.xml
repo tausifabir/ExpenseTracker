@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".RegisterActivity">
+
+    <EditText
+        android:id="@+id/input_registernameET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:hint="Enter Your Name"
+        android:inputType="textPersonName"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+
+        />
+
+    <EditText
+        android:id="@+id/input_registeremailET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Your Email"
+        android:inputType="textEmailAddress"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+
+        />
+
+    <EditText
+        android:id="@+id/input_registerpassET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Your Password"
+        android:inputType="textPassword"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+
+        />
+
+    <Button
+        android:id="@+id/signupbtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        android:textAllCaps="false"
+        android:textSize="20sp" />
+
+
+</LinearLayout>
