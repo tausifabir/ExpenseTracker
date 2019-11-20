@@ -103,9 +103,15 @@ public class AddExpense extends AppCompatActivity {
                 String ex_amount = expense_amount.getText().toString();
                 String ex_date = Datepicker.getText().toString();
 
+                if(ex_amount.isEmpty()){
+                    expense_amount.setError("Amount must be filled");
+                }else if (ex_date.isEmpty()){
+                    Toast.makeText(AddExpense.this, "Date must be filled", Toast.LENGTH_SHORT).show();
+
+                }else{
+
                     Log.d("expense",ex_amount+"");
-                    Log.d("expenseDate",ex_date+"");
-                    Log.e("expenseDate",ex_date+"");
+                    Log.d("expenese",ex_date+"");
                     expense = new Expense(ex_amount,ex_date);
                     boolean status = expenseDataSource.newInsertExpense(expense);
 
@@ -117,7 +123,7 @@ public class AddExpense extends AppCompatActivity {
                     }
 
 
-
+                }
 
             }
 
