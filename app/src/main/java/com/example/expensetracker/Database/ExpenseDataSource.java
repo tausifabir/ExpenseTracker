@@ -32,6 +32,7 @@ public class ExpenseDataSource {
         ContentValues  contentValues = new ContentValues();
         contentValues.put(ExpenseDataBaseHelper.EXPENSE_COL_AMOUNT,expense.getAmount());
         contentValues.put(ExpenseDataBaseHelper.EXPENSE_COL_DATE,expense.getDate());
+        contentValues.put(ExpenseDataBaseHelper.EXPENSE_COL_CATEGORY,expense.getInputType());
         long id = sqLiteDatabase.insert(ExpenseDataBaseHelper.TABLE_EXPENSE,null,contentValues);
 
         if(id > 0){
@@ -56,7 +57,8 @@ public class ExpenseDataSource {
                 int id = cursor.getInt(cursor.getColumnIndex(ExpenseDataBaseHelper.EXPENSE_COL_ID));
                 String amount = cursor.getString(cursor.getColumnIndex(ExpenseDataBaseHelper.EXPENSE_COL_AMOUNT));
                 String date = cursor.getString(cursor.getColumnIndex(ExpenseDataBaseHelper.EXPENSE_COL_DATE));
-                expense = new Expense(id,amount,date);
+                String input = cursor.getString(cursor.getColumnIndex(ExpenseDataBaseHelper.EXPENSE_COL_CATEGORY));
+                expense = new Expense(id,input,amount,date);
                 expenses.add(expense);
                 cursor.moveToNext();
 

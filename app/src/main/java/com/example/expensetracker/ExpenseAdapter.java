@@ -33,12 +33,17 @@ public class ExpenseAdapter extends ArrayAdapter<Expense> {
         convertView = inflater.inflate(R.layout.expense_row,parent,false);
 
 
-
-        final TextView dateshow = convertView.findViewById(R.id.selected_date);
+        final TextView typeTV = convertView.findViewById(R.id.inputType);
         final TextView amountTV = convertView.findViewById(R.id.amountselect);
+        final TextView dateshow = convertView.findViewById(R.id.selected_date);
 
-        dateshow.setText(expenseList.get(position).getDate());
+
+
+
+
+        typeTV.setText(expenseList.get(position).getInputType());
         amountTV.setText(expenseList.get(position).getAmount());
+        dateshow.setText(expenseList.get(position).getDate());
 
 
 

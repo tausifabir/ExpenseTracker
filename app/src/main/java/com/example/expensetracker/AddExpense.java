@@ -29,10 +29,10 @@ public class AddExpense extends AppCompatActivity {
 
     private RadioGroup radioGroup;
     private RadioButton incomerb,expenserb;
+    private String RadioText;
     private Spinner categoryincomesp, categoryexpensp;
     private EditText expense_amount;
     private Button savebtn,Datepicker;
-    private String  inputtype = "Income";
     private ExpenseDataSource expenseDataSource;
 
     boolean isDateChanged = false;
@@ -52,6 +52,25 @@ public class AddExpense extends AppCompatActivity {
 
         expenseDataSource = new ExpenseDataSource(this);
 
+
+
+        incomerb = findViewById(R.id.incomrbtn);
+        incomerb.setOnClickListener(listener1);
+
+        expenserb = findViewById(R.id.expenrbtn);
+        expenserb.setOnClickListener(listener2);
+
+
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                RadioButton rb = findViewById(checkedId);
+                RadioText = rb.getText().toString();
+
+            }
+        });
+
+
         listener1 = new View.OnClickListener() {
             public void onClick(View v) {
                 setTitle("Income");
@@ -69,20 +88,8 @@ public class AddExpense extends AppCompatActivity {
         };
 
 
-        incomerb = findViewById(R.id.incomrbtn);
-        incomerb.setOnClickListener(listener1);
-
-        expenserb = findViewById(R.id.expenrbtn);
-        expenserb.setOnClickListener(listener2);
 
 
-       radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-           public void onCheckedChanged(RadioGroup group, int checkedId) {
-               RadioButton rb = findViewById(checkedId);
-               String  inputtype = rb.getText().toString();
-            }
-        });
 
         categoryincomesp = findViewById(R.id.Income_Spinner);
         categoryexpensp = findViewById(R.id.Expense_Spinner);
@@ -99,9 +106,11 @@ public class AddExpense extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                boolean isChecked = false;
+
                 String ex_amount = expense_amount.getText().toString();
                 String ex_date = Datepicker.getText().toString();
+
+
 
                 if(ex_amount.isEmpty()){
                     expense_amount.setError("Amount must be filled");
@@ -110,16 +119,14 @@ public class AddExpense extends AppCompatActivity {
 
                 }else{
 
-                    Log.d("expense",ex_amount+"");
-                    Log.d("expenese",ex_date+"");
-                    expense = new Expense(ex_amount,ex_date);
+                    expense = new Expense(RadioText,ex_amount,ex_date);
                     boolean status = expenseDataSource.newInsertExpense(expense);
-
                     if(status){
-                        Toast.makeText(AddExpense.this, "Success", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AddExpense.this, ""+expense.getInputType(), Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(AddExpense.this,HomeActivity.class));
                     }else{
                         Toast.makeText(AddExpense.this, "Failed", Toast.LENGTH_SHORT).show();
+
                     }
 
 

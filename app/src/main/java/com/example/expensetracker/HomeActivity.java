@@ -37,12 +37,18 @@ public class HomeActivity extends AppCompatActivity {
     private TextView dateshowTV;
     private TextView row_date;
     private TextView row_amount;
+    private TextView row_type;
     private FloatingActionButton addbtn;
     RecyclerView recyclerView;
     public static List<Expense>expenselist = new ArrayList<>();
     private ExpenseDataSource expenseDataSource;
     private ExpenseAdapter expenseAdapter;
     private ListView expenselistView;
+    private Expense expense;
+
+    private ExpenseDataBaseHelper expenseDataBaseHelper;
+
+
 
     private boolean isloggedin = true;
     String date_n = new SimpleDateFormat("MMM dd, yyyy", Locale.getDefault()).format(new Date());
@@ -63,6 +69,7 @@ public class HomeActivity extends AppCompatActivity {
         TodayDateTV = findViewById(R.id.today_DateTV);
         dateshowTV=findViewById(R.id.currentDatePicker_home);
         row_date = findViewById(R.id.RowDate);
+        row_type = findViewById(R.id.RowType);
         row_amount = findViewById(R.id.RowAmount);
         expenselistView = findViewById(R.id.exlistView);
         addbtn= findViewById(R.id.addbtn);
@@ -76,6 +83,8 @@ public class HomeActivity extends AppCompatActivity {
         expenselist = expenseDataSource.getAllExpense();
         expenseAdapter = new ExpenseAdapter(this,expenselist);
         expenselistView.setAdapter(expenseAdapter);
+
+
 
 
         Intent intent =  getIntent();
@@ -136,7 +145,6 @@ public class HomeActivity extends AppCompatActivity {
         }
         return true;
     }
-
 
 
 }

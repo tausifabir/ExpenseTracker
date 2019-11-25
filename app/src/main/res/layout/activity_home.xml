@@ -102,15 +102,29 @@
 
         <TableRow>
 
+
+
             <TextView
-                android:id="@+id/RowAmount"
+                android:id="@+id/RowType"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:text="Type"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                />
+            <TextView
+                android:id="@+id/RowAmount"
                 android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:text="Amount"
                 android:textAlignment="center"
                 android:textAllCaps="false"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                />
+
 
             <TextView
                 android:id="@+id/RowDate"
@@ -120,7 +134,10 @@
                 android:text="Date"
                 android:textAlignment="center"
                 android:textAllCaps="false"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                />
+
+
         </TableRow>
 
     </TableLayout>

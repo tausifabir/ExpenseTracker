@@ -10,23 +10,22 @@ public class Expense implements Serializable {
     public static final List<Expense> expenseList = new ArrayList<>();
 
     private int expense_id;
-    private String expense;
+    private String InputType;
     private String categroy;
     private String amount;
     private String date;
 
-    public Expense(int expense_id, String expense, String categroy, String amount, String date) {
+    public Expense(int expense_id, String InputType, String categroy, String amount, String date) {
         this.expense_id = expense_id;
-        this.expense = expense;
+        this.InputType = InputType;
         this.categroy = categroy;
         this.amount = amount;
         this.date = date;
     }
 
 
-
-    public Expense(String expense, String categroy, String amount, String date) {
-        this.expense = expense;
+    public Expense(String InputType, String categroy, String amount, String date) {
+        this.InputType = InputType;
         this.categroy = categroy;
         this.amount = amount;
         this.date = date;
@@ -43,6 +42,21 @@ public class Expense implements Serializable {
         this.date = date;
     }
 
+
+    public Expense(int expense_id, String inputType, String amount, String date) {
+        this.expense_id = expense_id;
+        InputType = inputType;
+        this.amount = amount;
+        this.date = date;
+    }
+
+
+    public Expense(String inputType, String amount, String date) {
+        InputType = inputType;
+        this.amount = amount;
+        this.date = date;
+    }
+
     public int getExpense_id() {
         return expense_id;
     }
@@ -51,8 +65,8 @@ public class Expense implements Serializable {
         this.expense_id = expense_id;
     }
 
-    public String getExpense() {
-        return expense;
+    public String getInputType() {
+        return InputType;
     }
 
     public String getCategroy() {
