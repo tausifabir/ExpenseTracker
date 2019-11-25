@@ -67,6 +67,7 @@ public class AddExpense extends AppCompatActivity {
                 RadioButton rb = findViewById(checkedId);
                 RadioText = rb.getText().toString();
 
+
             }
         });
 
